@@ -27,8 +27,14 @@ namespace GeoReaderDLL
         private string _UwGroup;
         public string UwGroup { get => _UwGroup; }
 
+        private string _OWDisplayTxt;
+        public string OWDisplayTxt { get => _OWDisplayTxt; }
+
         private string _UW;
         public string UW { get => _UW; }
+
+        private string _UWDisplayTxt;
+        public string UWDisplayTxt { get => _UWDisplayTxt; }
 
         private double _Length;
         public double Length { get => _Length; }
@@ -52,6 +58,17 @@ namespace GeoReaderDLL
             double x = Math.Pow((P2.X - P1.X), 2);
             _Length = Math.Sqrt((y + x));
 
+            if((_OW == "") && (_OwGroup != ""))
+            { _OWDisplayTxt = _OwGroup;  }
+
+            if ((_OW != "") && (_OwGroup == ""))
+            { _OWDisplayTxt = _OW; }
+
+            if ((_UW == "") && (_UwGroup != ""))
+            { _UWDisplayTxt = _UwGroup; }
+
+            if ((_UW != "") && (_UwGroup == ""))
+            { _UWDisplayTxt = _UW; }
         }
     }
 }
