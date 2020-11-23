@@ -58,16 +58,24 @@ namespace GeoReaderDLL
             double x = Math.Pow((P2.X - P1.X), 2);
             _Length = Math.Sqrt((y + x));
 
+
             if((_OW == "") && (_OwGroup != ""))
             { _OWDisplayTxt = _OwGroup;  }
 
             if ((_OW != "") && (_OwGroup == ""))
             { _OWDisplayTxt = _OW; }
 
+            if ((_OW != "") && (_OwGroup != ""))
+            { _OWDisplayTxt = _OW; }
+
+
             if ((_UW == "") && (_UwGroup != ""))
             { _UWDisplayTxt = _UwGroup; }
 
             if ((_UW != "") && (_UwGroup == ""))
+            { _UWDisplayTxt = _UW; }
+
+            if ((_UW != "") && (_UwGroup != ""))
             { _UWDisplayTxt = _UW; }
         }
     }
