@@ -25,6 +25,9 @@ namespace GeoReaderDLL
         private bool _IsCreatedByBoost;
         public bool IsCreatedByBoost { get => _IsCreatedByBoost; }
 
+        private string _BoostVersion;
+        public string BoostVersion { get => _BoostVersion; }
+
         private string _Werkstoff;
         public string Werkstoff { get => _Werkstoff; }
 
@@ -145,7 +148,10 @@ namespace GeoReaderDLL
                     { _BendCount = Convert.ToInt32(line.Split('@')[1]); }
 
                     if (line.Split('@')[0] == "BOOST_VERSION")
-                    { _IsCreatedByBoost = true; }
+                    { 
+                        _IsCreatedByBoost = true;
+                        _BoostVersion = line.Split('@')[1];
+                    }
 
                     if (line == "#~TTINFO_END")
                     {
